@@ -20,6 +20,7 @@ cd Sigmoid-Auto-Assignment
 ### **ENV Variables**
 ```
 MONGO_URI=set your mongodb url in env package
+example can be:-"mongodb://localhost:27017/yourdatabase_name"
 ```
 
 
