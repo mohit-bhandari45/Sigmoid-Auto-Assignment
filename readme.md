@@ -19,7 +19,7 @@ cd Sigmoid-Auto-Assignment
  
 ### **ENV Variables**
 ```
-MONGO_URI="set your mongodb url in env package"
+MONGO_URI=set your mongodb url in env package
 ```
 
 
@@ -29,10 +29,12 @@ Navigate to the front and backend individually, install all the packeages by npm
 
 ``` 
 cd Frontend
+npm i
 npm run dev
 ```
 ``` 
 cd Backend
+npm i
 node --watch server.js(refresh it)
 ```
 
