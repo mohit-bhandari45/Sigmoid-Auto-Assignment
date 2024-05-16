@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Card from '../components/DashboardComps/Card'
 import Navbar from '../components/DashboardComps/Navbar'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const FoodOrder = () => {
+    const navigate=useNavigate()
 
     const [items, setitems] = useState([
         {
@@ -40,7 +41,8 @@ const FoodOrder = () => {
             },
             body: JSON.stringify(selecteditems),
         })
-        await a.json()
+        await a.json();
+        navigate("/dashboard")
     }
 
 
@@ -52,11 +54,11 @@ const FoodOrder = () => {
             <Navbar />
             <div className='flex flex-col w-full justify-center items-center gap-5 py-10'>
                 {items.map((item) => {
-                    return <Card key={items.id} image={item.image} title={item.title} price={item.price} selecteditems={selecteditems} setselecteditems={setselecteditems} id={item.id} />
+                    return <Card key={item.id} image={item.image} title={item.title} price={item.price} selecteditems={selecteditems} setselecteditems={setselecteditems} id={item.id} />
                 })}
             </div>
             <div className="button w-full flex justify-center items-centerc my-10">
-                <Link to="/dashboard"><button className='py-6 px-16 font-[Helvetica] bg-black rounded-full text-4xl text-white font-bold' onClick={handleClick}>Add to Cart</button></Link>
+                <button className='py-6 px-16 font-[Helvetica] bg-black rounded-full text-4xl text-white font-bold' onClick={handleClick}>Add to Cart</button>
             </div>
         </>
     )
