@@ -5,12 +5,14 @@ import 'animate.css';
 const Dashboard = () => {
 
   const [itemsmap, setitemsmap] = useState([])
-
-  useEffect(async () => {
-    let a = await fetch("http://localhost:3000/getitems");
-    let data = await a.json();
-    console.log(data)
-     await setitemsmap(data)
+  const doAsync = async() => {
+      let a = await fetch("http://localhost:3000/getitems");
+      let data = await a.json();
+      console.log(data)
+      await setitemsmap(data)
+  }
+  useEffect(()=>{
+    doAsync();
   }, [])
 
 
