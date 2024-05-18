@@ -8,8 +8,7 @@ const Dashboard = () => {
   const doAsync = async() => {
       let a = await fetch("http://localhost:3000/getitems");
       let data = await a.json();
-      console.log(data)
-      await setitemsmap(data)
+      setitemsmap(data)
   }
   useEffect(()=>{
     doAsync();
